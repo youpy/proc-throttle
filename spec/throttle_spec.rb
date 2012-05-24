@@ -11,6 +11,39 @@ describe Proc do
 
       throttled_proc = proc.throttle(1)
 
+      throttled_proc.call
+
+      count.should eql(1)
+
+      sleep 1.1
+
+      10.times do
+        throttled_proc.call
+        sleep 0.2
+      end
+
+      sleep 1.1
+
+      count.should eql(4)
+
+      sleep 1.1
+
+      throttled_proc.call(10)
+
+      count.should eql(14)
+    end
+  end
+
+  describe '#debounce' do
+    it 'should debounce proc call' do
+      count = 0
+
+      proc = Proc.new do |increment|
+        count += increment || 1
+      end
+
+      throttled_proc = proc.debounce(1)
+
       10.times do
         throttled_proc.call
       end
