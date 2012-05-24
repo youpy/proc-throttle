@@ -1,6 +1,4 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/proc-throttle/version', __FILE__)
-
 Gem::Specification.new do |gem|
   gem.authors       = ["youpy"]
   gem.email         = ["youpy@buycheapviagraonlinenow.com"]
@@ -14,4 +12,6 @@ Gem::Specification.new do |gem|
   gem.name          = "proc-throttle"
   gem.require_paths = ["lib"]
   gem.version       = '0.0.1'
+
+  gem.add_development_dependency('rake')
 end
