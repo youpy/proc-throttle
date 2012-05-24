@@ -1,5 +1,5 @@
 class Proc
-  def throttle(sec)
+  def throttle(delay_sec)
     thread = nil
 
     Proc.new do |*args|
@@ -8,7 +8,7 @@ class Proc
       end
 
       thread = Thread.new do
-        sleep(sec)
+        sleep(delay_sec)
         self.call(*args)
       end
     end
