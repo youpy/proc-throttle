@@ -1,6 +1,6 @@
-# Proc::Throttle
+# proc-throttle
 
-TODO: Write a gem description
+Proc#throttle: throttling calls
 
 ## Installation
 
@@ -18,7 +18,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    count = 0
+
+    proc = Proc.new do |increment|
+      count += increment || 1
+    end
+
+    throttled_proc = proc.throttle(1)
+
 
 ## Contributing
 
