@@ -1,4 +1,4 @@
-# proc-throttle
+# proc-throttle [![Build Status](https://secure.travis-ci.org/youpy/proc-throttle.png)](http://travis-ci.org/youpy/proc-throttle)
 
 Proc#throttle: throttling calls
 
