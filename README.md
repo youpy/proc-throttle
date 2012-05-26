@@ -20,11 +20,15 @@ Or install it yourself as:
 
     count = 0
 
-    proc = Proc.new do |increment|
-      count += increment || 1
+    proc = Proc.new do
+      count += 1
+    end.throttle(1)
+
+    10.times do
+      proc.call
     end
 
-    throttled_proc = proc.throttle(1)
+    count // => 1
 
 
 ## Contributing
