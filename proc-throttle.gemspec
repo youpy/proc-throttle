@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = "proc-throttle"
   gem.require_paths = ["lib"]
-  gem.version       = '0.1.0'
+  gem.version       = '0.1.1'
 
   gem.add_development_dependency('rspec', ["~> 2.8.0"])
   gem.add_development_dependency('rake')
