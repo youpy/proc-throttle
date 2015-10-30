@@ -24,13 +24,13 @@ describe Proc do
 
       sleep 1.1
 
-      count.should eql(4)
+      count.should eql(3)
 
       sleep 1.1
 
       throttled_proc.call(10)
 
-      count.should eql(14)
+      count.should eql(13)
     end
   end
 

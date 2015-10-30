@@ -10,9 +10,11 @@ class Proc
         thread.kill
       end
 
-      if !debounce && (last_exec.nil? || (last_exec + delay_sec < now))
-        self.call(*args)
-        last_exec = now
+      if !debounce
+        if (last_exec.nil? || (last_exec + delay_sec < now))
+          self.call(*args)
+          last_exec = now
+        end
       else
         thread = Thread.new do
           sleep(delay_sec)
